@@ -9,10 +9,12 @@ def save_images():
     data.append(request.json)
     return str(200)
 
-@app.route("/all", methodw=["GET"])
+@app.route("/all", methods=["GET"])
 def get_img():
     return data
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
     
