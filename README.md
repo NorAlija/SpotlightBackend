@@ -43,6 +43,49 @@ The primary functionality of the application is to enable the model server to up
 
 - The application runs on the specified host (0.0.0.0) and port (5000) in debug mode.
 
+
+
+## Installation
+
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository_url>
+   cd <repository_directory>
+   ```
+
+2. **Install Dependencies:**
+   ```bash
+   pip install flask flask_sqlalchemy Pillow
+   ```
+
+## Running the Application
+
+1. **Run the Flask Application:**
+   ```bash
+   flask run --app flaskr --debug
+
+   ```
+## API Endpoints
+
+### Upload Image
+
+- **Endpoint:**
+  - `/upload`
+
+- **Method:**
+  - `POST`
+
+- **Request Payload:**
+  - Include an image file in the request payload with the key `d`.
+
+- **Response:**
+  - Upon successful upload, the server will respond with a JSON message:
+    ```json
+    {
+      "message": "Image uploaded successfully"
+    }
+    ```
+
 ## Conclusion
 
 This project introduces the basics of creating a web application using Flask and storing data in a SQLite database. It showcases the integration of Flask-SQLAlchemy for managing database interactions and includes functionality to handle image uploads. This project serves as an entry-level exploration into web development and database integration using Flask and related technologies.
