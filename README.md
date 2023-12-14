@@ -16,6 +16,7 @@ The primary functionality of the application is to enable the model server to up
 - **PIL (Pillow):** Python Imaging Library (Pillow), used for image processing tasks such as saving uploaded images.
 - **NumPy:** A library for numerical operations, used for handling image data.
 - **IO (BytesIO):** Input/output tools for handling binary data streams.
+- **opencv2:** Library for computer vision
 
 ## Application Components
 
@@ -35,7 +36,7 @@ The primary functionality of the application is to enable the model server to up
 
 ### 4. Image Upload Route
 
-- The /upload route is configured to accept HTTP POST requests for image uploads.
+- The `/upload` route is configured to accept HTTP POST requests for image uploads.
 - Uploaded images are saved to a designated folder (uploads) on the server.
 - Image metadata (filename) is stored in the SQLite database using the Flask-SQLAlchemy ORM.
 
@@ -55,7 +56,7 @@ The primary functionality of the application is to enable the model server to up
 
 2. **Install Dependencies:**
    ```bash
-   pip install flask flask_sqlalchemy Pillow
+   pip install flask flask_sqlalchemy Pillow numpy opencv-python
    ```
 
 ## Running the Application
@@ -76,7 +77,7 @@ The primary functionality of the application is to enable the model server to up
   - `POST`
 
 - **Request Payload:**
-  - Include an image file in the request payload with the key `d`.
+  - Include an image file in the request payload with the key `image`.
 
 - **Response:**
   - Upon successful upload, the server will respond with a JSON message:
@@ -88,4 +89,4 @@ The primary functionality of the application is to enable the model server to up
 
 ## Conclusion
 
-This project introduces the basics of creating a web application using Flask and storing data in a SQLite database. It showcases the integration of Flask-SQLAlchemy for managing database interactions and includes functionality to handle image uploads. This project serves as an entry-level exploration into web development and database integration using Flask and related technologies.
+This project introduces the basics of creating a web application using Flask and storing data in a SQLite database. It showcases the integration of Flask-SQLAlchemy for managing database interactions and includes functionality to handle image uploads. 
