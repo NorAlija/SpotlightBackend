@@ -5,8 +5,7 @@ from datetime import datetime
 import os
 from PIL import Image, UnidentifiedImageError
 import numpy as np
-from io import BytesIO
-
+import cv2
 
 app = Flask(__name__)
 
@@ -33,14 +32,20 @@ with app.app_context():
 # Route to upload an image
 @app.route('/upload', methods=['POST'])
 def upload_image():
-    image = request.files['d']
-
-
-    # Save image to a folder (create the folder if it doesn't exist)
+    image = request.files['image'].read()
+    
+    nparr = np.frombuffer(image, np.uint8)
+    frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    # image = request.files['d']
+    
+    ##Save image to a folder (create the folder if it doesn't exist)
     upload_folder = 'uploads'
     os.makedirs(upload_folder, exist_ok=True)
     filename = os.path.join(upload_folder, str(datetime.now()) + '.jpg')
-    image.save(filename)
+    cv2.imwrite(filename, frame)
+
+     
+    # image.save(filename)
 
     # Save image information to the database using the ORM
     new_image = ImageModel(filename=filename)
