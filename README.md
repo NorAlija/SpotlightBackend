@@ -15,7 +15,6 @@ The primary functionality of the application is to enable the model server to up
 - **SQLite:** A lightweight, serverless, and self-contained SQL database engine used to store image metadata.
 - **PIL (Pillow):** Python Imaging Library (Pillow), used for image processing tasks such as saving uploaded images.
 - **NumPy:** A library for numerical operations, used for handling image data.
-- **IO (BytesIO):** Input/output tools for handling binary data streams.
 - **opencv2:** Library for computer vision
 
 ## Application Components
